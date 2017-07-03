@@ -1,6 +1,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Author: Mauricio Matamoros
+% Updated: July 3, 2017
+% Contact: mauricio@robocupathome.org
+%
 % This is the LaTeX source for the TDPTemplate using
 % the LaTeX document class 'llncs.cls' Springer LNAI format
 % used in the RoboCup Symposium submissions.
@@ -12,6 +16,8 @@
 %
 % NB: the document class 'llncs' has its own and detailed documentation, see
 % ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+% Remark: Last page with specs won't be included in Camera ready TDP's.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -26,20 +32,31 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-
+\usepackage{fancyhdr}
+\usepackage{titling}
 \usepackage{lipsum}
-\newcommand{\BnL}[1][1em]{ \includegraphics[width=#1]{images/bnl.jpg} }
+\input{macros}
 
-\begin{document}
 
-\title{Lipsum 2017 Team Description Paper}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Title
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Lipsum 2018 Team Description Paper}
 
-\author{Main-author \and Co-author \and Team Members }
+\author{Main-author \and Co-author \and Team Members}
 \institute{Affiliation name and address, \\
 \texttt{http://devoted-web-site.url}}
+
+
+\begin{document}
 \maketitle
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Abstract
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
@@ -72,20 +89,47 @@ Remember that the TDP must contain the following information:
 \section{BnL Trash Seeker Algorithm (Main research)}
 \lipsum[4-14]
 
-\section{Experiments and results}
+\section{BnL All-purpose Speech Recognizer (Main research)}
 \lipsum[15-20]
 
+\section{Other relevant contributions}
+\lipsum[21]
+\subsection{Dirt Detector Algorithm}
+\lipsum[22-25]
+\subsection{Green Plant Seeker Algorithm}
+\lipsum[25-29]
+\subsection{Trash Seeker Algorithm}
+\lipsum[30-34]
+
+\section{Experiments and results}
+\lipsum[35-39]
+
 \section{Conclusions and future work}
-\lipsum[21-24]
+\lipsum[40-43]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Bibliography
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Bibliography}
-\nocite{*}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
 
-% \newgeometry{left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm}
-\newpage\input{RobotDescriptionDSPL}
-\newpage\input{RobotDescriptionOPL}
-\newpage\input{RobotDescriptionSSPL}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Robot Specifications
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\robospecs
+\input{RobotDescriptionDSPL}
+\newpage
+\input{RobotDescriptionOPL}
+\newpage
+\input{RobotDescriptionSSPL}
+
+\nocite{*}
 
 \end{document} 
