@@ -79,11 +79,13 @@ Remember that the TDP must contain the following information:
 \lipsum[21-24]
 
 \section*{Bibliography}
-Add your references here
-%\bibliographystyle{unsrt}
-%\bibliography{bibliography}
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
 
-\newpage
-\input{RobotDescription}
+% \newgeometry{left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm}
+\newpage\input{RobotDescriptionDSPL}
+\newpage\input{RobotDescriptionOPL}
+\newpage\input{RobotDescriptionSSPL}
 
 \end{document} 
