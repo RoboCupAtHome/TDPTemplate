@@ -1,6 +1,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Author: Mauricio Matamoros
+% Updated: July 3, 2017
+% Contact: mauricio@robocupathome.org
+%
 % This is the LaTeX source for the TDPTemplate using
 % the LaTeX document class 'llncs.cls' Springer LNAI format
 % used in the RoboCup Symposium submissions.
@@ -13,6 +17,8 @@
 % NB: the document class 'llncs' has its own and detailed documentation, see
 % ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
 %
+% Remark: Last page with specs won't be included in Camera ready TDP's.
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[runningheads,a4paper]{llncs}
@@ -21,25 +27,38 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
 \usepackage{url}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{xcolor}
 \usepackage{lipsum}
-\newcommand{\BnL}[1][1em]{ \includegraphics[width=#1]{images/bnl.jpg} }
+\input{macros}
 
-\begin{document}
 
-\title{Lipsum 2017 Team Description Paper}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Title
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Lipsum 2018 Team Description Paper}
 
-\author{Main-author \and Co-author \and Team Members }
+\author{Main-author \and Co-author \and Team Members}
 \institute{Affiliation name and address, \\
 \texttt{http://devoted-web-site.url}}
+
+
+\begin{document}
 \maketitle
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Abstract
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
@@ -52,40 +71,103 @@ In your abstract, please state your main research line and your achievements of 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-While writing the TDP, focus on your current research, clearly stating all scientific contribution, and why are they important for you and the league. The length of the TDP is limited to 6 pages. Please notice that changes to the margins, space between paragraphs, and font size are not allowed (such TDP will be rejected). We suggest to leave the hardware and software description for the end of the paper.
+A Team Description Paper (hereinafter referred as TDP) is an 8-pages long scientific paper, detailing information on the technical and scientific approach of the team's research.
+
+The present document is a template for the TDPs as they should be presented in 2018. An updated version of this template can be download from \\\url{https://github.com/RoboCupAtHome/TDPTemplate}.
+
+
+\section{TDP contents}
+While writing the TDP, focus on your current research, clearly stating all scientific contribution, and why are they important for you and the league. The length of the TDP is limited to 8 pages including references. Exceeding the number of pages will automatically void your application.
+
+Although reviewers share a common background in the domain of service robotics, is very unlikely that they are actively involved in your research field. The organizing committee kindly asks authors to keep this in mind and write in a more descriptive and less analytic way. The main goal of a TDP is tell others about your latest practical achievement, how your team managed to solve the problem, what strategy was chosen and why, while at the same time trying to convince your reader that what you are doing is useful or applicable in a daily life scenario.
+
+The Team Description Paper shall use the \textit{Springer LNAI format}\footnotemark used in the RoboCup Symposium submissions, and has a hard limit of 8 pages without altering margins or spacing (including references but excluding the annex). Please notice that changes to the margins, space between paragraphs, and font size are not allowed (such TDP will be rejected). We suggest to leave the hardware and software description for the end of the paper in the annex.\footnotetext{\url{http://www.springer.com/computer/lncs?SGWID=0-164-6-793341-0}}
+
+\textbf{Important Notice:} Attaching to the requested format is important for the camera ready version of the TDPs can be included in the memories of the competition.
 
 Remember that the TDP must contain the following information:
 
 \begin{itemize}
-	\item Description of the hardware and software including a list of integrated externally available components (including commercial products, freeware, Open Source, etc.)
 	\item Innovative technology and scientific contribution
-	\item Photo(s) of the robot
 	\item Focus of research/research interests
 	\item Re-usability of the system for other research groups
 	\item Applicability of the robot in the real world
+	\item \textbf{DSPL \& SSPL:} When the robot depicted in the TDP or Team Video is different from the league's standard one, the TDP must clearly state how the addressed approach and described software will be adapted to the standard platform robot.
 \end{itemize}
+
+\textbf{Remark:} The language for the TDP body, its graphics, tables, images, and all additional content must be English. Content in other languages must be translated.
+
+\subsection{TDP Annex}
+The TDP's Robot Description Annex is an appendix of arbitrary length that should be attached at the end of the TDP and summarizes the robot's software and hardware technical specifications.
+
+When present, the annex must contain the following information:
+
+\begin{itemize}
+	\item Photo(s) of the robot
+	\item \textbf{OPL only:} Brief, compact description of the robot's hardware.
+	\item \textbf{DSPL \& SSPL:} Please skip hardware description.
+	\item Brief, compact description of the robot's software (including commercial products, freeware, Open Source, etc.).
+	\item List of all external computing devices and the software running on them.
+	\item List of all cloud computing resources intended to be used.
+	\item Brief, compact description of all external devices (e.g. smart home devices, transceivers, helper robots, etc.).
+\end{itemize}
+
+Examples are provided at the end of this document in
+\hyperlink{page.9}{page~9~(DSPL)},
+\hyperlink{page.10}{page~10~(OPL)}, and
+\hyperlink{page.11}{page~11~(SSPL)}.
+
+\textbf{Copyright note:} All TDPs sent for qualification may be made publicly available in the RoboCup @Home Wiki for further reference. On submitting, teams implicitly grant permission to RoboCup @Home and the RoboCup Federation to copy, distribute, upload, publish, and use the manuscript to promote the event and the league at convenience.
 
 \section{Background}
 % We are Buy n Large. We have no competitors so no background is required.
 \lipsum[1-3]
 
 \section{BnL Trash Seeker Algorithm (Main research)}
-\lipsum[4-14]
+\lipsum[4-10]
+
+\section{BnL All-purpose Speech Recognizer (Main research)}
+\lipsum[11-13]
+
+\section{Other relevant contributions}
+\lipsum[14]
+\subsection{Dirt Detector Algorithm}
+\lipsum[15-17]
+\subsection{Green Plant Seeker Algorithm}
+\lipsum[18-20]
+\subsection{Trash Seeker Algorithm}
+\lipsum[20-22]
 
 \section{Experiments and results}
-\lipsum[15-20]
+\lipsum[23-24]
 
 \section{Conclusions and future work}
-\lipsum[21-24]
+\lipsum[25-26]
 
-\section*{Bibliography}
-\nocite{*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Bibliography
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
 
-% \newgeometry{left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm}
-\newpage\input{RobotDescriptionDSPL}
-\newpage\input{RobotDescriptionOPL}
-\newpage\input{RobotDescriptionSSPL}
+{\vfill\begin{center}\huge\color{red}TDP must \textbf{NOT} exceed 8 pages\end{center}}
 
-\end{document} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Robot Specifications
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\robospecs
+\input{RobotDescriptionDSPL}
+\newpage
+\input{RobotDescriptionOPL}
+\newpage
+\input{RobotDescriptionSSPL}
+
+\nocite{*}
+
+\end{document}
