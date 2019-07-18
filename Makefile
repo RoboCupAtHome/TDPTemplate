@@ -13,7 +13,7 @@ all:
 	$(SILENT) make -s clean
 	$(SILENT) rubber --pdf --force $(TEXFILE)
 	$(SILENT) rm -f $(TEMP)
-#	$(SILENT) evince $(PDFFILE)
+# 	$(SILENT) xdg-open $(PDFFILE)
 
 clean:
 	$(SILENT) rm -f $(RMFILES)
