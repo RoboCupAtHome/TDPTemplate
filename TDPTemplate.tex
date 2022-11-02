@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Author: Mauricio Matamoros
-% Updated: July 18, 2019
+% Updated: Oct 31, 2022
 % Contact: mauricio@robocupathome.org
 %
 % This is the LaTeX source for the TDPTemplate using
@@ -25,23 +25,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[runningheads,a4paper]{llncs}
+
+% XeLaTeX support
+\usepackage{ifxetex}
+\ifxetex%
+	\usepackage{fontspec}
+	\usepackage{polyglossia}
+	\setmainlanguage{english}
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage[english]{babel}
+\fi
+
+% Common packages
+\usepackage{amsmath}
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage[utf8]{inputenc}
-\usepackage[hidelinks]{hyperref}
 \usepackage{url}
 \usepackage{float}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{fancyhdr}
 \usepackage{titling}
-\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage[all]{nowidow}
+\usepackage[inline]{enumitem}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Referencing packages
+\usepackage{varioref}
+\usepackage[hidelinks]{hyperref}
+\usepackage[noabbrev,nameinlink]{cleveref}
+
 \usepackage{lipsum}
 \input{macros}
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,7 +73,7 @@
 % Title
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{SkyNet 2020 Team Description Paper}
+\title{SkyNet 2023 Team Description Paper}
 
 \author{Main-author \and Co-author \and Team Members}
 \institute{Affiliation name and address, \\
@@ -66,7 +90,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-The present document serves as template for the 2020 Team Description Papers to be submitted for qualification in the 2020 RoboCup@Home international competition to be held in Bordeaux, France.
+The present document serves as template for the 2023 Team Description Papers to be submitted for qualification in the 2023 RoboCup@Home international competition to be held in Bordeaux, France.
 
 We strongly recommend abstracts to be limited to 250 words, and follow the three-paragraph rule: introduction and relevance, approach, and contributions. This will help your readers to get a better understanding of what you're about to present.
 
@@ -79,7 +103,7 @@ Additionally, you may address your approach to the problem solution and which re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-The present document is a template for the Team Description Paper to be submitted for qualification in the 2020 RoboCup@Home international competition to be held in Bordeaux, France.
+The present document is a template for the Team Description Paper to be submitted for qualification in the 2023 RoboCup@Home international competition to be held in Bordeaux, France.
 
 A Team Description Paper (hereinafter referred as TDP) is an 8-pages long scientific paper, detailing information on the technical and scientific approach of the team's research.
 An updated version of this template can be download from {\small\url{https://github.com/RoboCupAtHome/TDPTemplate}}.
@@ -239,13 +263,15 @@ Examples are provided at the end of this document in
 % Comment or delete the following line
 {\vfill\begin{center}\huge\color{red}TDP must \textbf{NOT} exceed 8 pages\end{center}}
 
+\clearpage{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Robot Specifications
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\robospecs
+\robospecs{}
 \input{RobotDescriptionDSPL}
 \newpage
 \input{RobotDescriptionOPL}

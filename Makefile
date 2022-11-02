@@ -3,6 +3,8 @@ PREFIX = TDPTemplate
 TEXFILE = $(PREFIX).tex
 AUXFILE = $(PREFIX).aux
 PDFFILE = $(PREFIX).pdf
+LATEXMK = latexmk -g -pdfxe
+RUBBER  = rubber --pdf --force --module xelatex
 SILENT  = @
 
 TEMP	= *.aux *.bbl *.blg *.log *.out
@@ -11,9 +13,11 @@ RMFILES = $(TEMP) *~ *.toc *.idx *.ilg *.ind *.synctex.gz \
 
 all:
 	$(SILENT) make -s clean
-	$(SILENT) rubber --pdf --force $(TEXFILE)
+	$(SILENT) $(RUBBER) $(TEXFILE)
+# 	$(SILENT) $(LATEXMK) $(TEXFILE)
 	$(SILENT) rm -f $(TEMP)
-# 	$(SILENT) xdg-open $(PDFFILE)
 
 clean:
+	$(SILENT) $(RUBBER) --clean $(TEXFILE)
+# 	$(SILENT) $(LATEXMK) -C $(TEXFILE)
 	$(SILENT) rm -f $(RMFILES)
